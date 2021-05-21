@@ -47,7 +47,7 @@ print('                                                           ')
 
 
 
-#Below authenticates you to the CCSD Drive/spreadsheets, the creds.json must be in the same file as script. See Integration Engineer to get a key.
+#Below authenticates you to the Google Drive/spreadsheets, the creds.json must be in the same file as script. See XXXXXXXXXX to get a key.
 scope = ["https://spreadsheets.google.com/feeds","https://www.googleapis.com/auth/spreadsheets","https://www.googleapis.com/auth/drive.file","https://www.googleapis.com/auth/drive", "https://www.googleapis.com/auth/drive.appdata"]
 creds = ServiceAccountCredentials.from_json_keyfile_name("creds.json", scope)
 client = gspread.authorize(creds)
