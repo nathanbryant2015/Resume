@@ -205,7 +205,7 @@ configs = os.listdir(home_folder)
 for files in configs:
     file_metadata = {'name': files,
                  'mimeType': '*/*',
-                 'driveId' : '0AFXDsbEs4ywWUk9PVA',
+                 'driveId' : 'XXXXXXXXXXXXXXXXX',
                  'parents' : [folder_id]
     }
     media = MediaFileUpload(str(home_folder) + str(files),
