@@ -344,7 +344,7 @@ folder_metadata = {
     'name': site_code,
     'mimeType': 'application/vnd.google-apps.folder',
     'driveId' : 'XXXXXXXXXXXXXXXXXX',
-    'parents' : ['147j1bmpnrNTIZay4P_l4s-5Oy_yCX2BW']
+    'parents' : ['XXXXXXXXXXXXXXXXX']
 }
 
 #executes the file creation
