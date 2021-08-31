@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+{% endblock %}
+
+{% block body %}
+<h1>Web Scrape Script</h1><br>
+<p>
+
+<form class="form-horizontal my-2 my-md-0">
+	What is the IG Link?
+      <input class="form-control" type="url" placeholder="IG Link" aria-label="link"><br>
+	What is the site code?
+      <input class="form-control" type="number" placeholder="Site Code" aria-label="sitecode"><br>
+	What is your CCSD AD Username?
+      <input class="form-control" type="text" placeholder="User Name" aria-label="username"><br>
+	What is your CCSD AD Password?
+      <input class="form-control" type="password" placeholder="AD Password" aria-label="password"><br>
+      <button type="submit" class="btn btn-success">Execute Script</button>
+</p>
+</form>
+{% endblock %}

@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+
+{% endblock %}
+
+{% block body %}
+<h1>Home BODY</h1>
+<p>IPQC STUFF</p>
+<p>Daily Effort Reminder:
+For every action, there is a follow-up action. Clean as you go, validate as you go, and SOP as you go.
+
+
+ Deployment Team -  
+   ISSUE/AoR/SOP
+From nightly status gmails:  
+        RM26 fiber issue. Good SOP here as a FAMIS and CA ticket was created to address the fiber. Seeing the nightly Gmail with testing data to support the failed fiber was awesome. "RM26, when tested, is showing 11dB coming from the local SFP and 40dB from the distant end." Please make sure this is in the SOP as all teams should provide test data. Please add the color of the strand(s) in future troubleshooting. This data, when captured should also be part of the CA ticket that is created when we are passing onto Networks.
+ 
+Validation issues:  
+     APs are using wired User VLAN10. This needs to be changed to standard VLAN111. CA:2514253 has been submitted - Good SOP
+     TR25-01 had faulty Mod 4 on port# 1/4/1.  This has been assigned to NR Joe Beale - Did this tech receive a CA generated ticket? 
+     No tape on ER RTR UPS - Reoccuring issue.  AoR Tech 1 with Tech II follow up. SOP installation follow-up. Is this included in the AOR tech area tabs? Lead tab? Where does it get visibility as a reminder?
+     ER UPS power plug group#2 was not pushed in all the way - for every action, there is a follow-up action. Slow down. Be attentive. Ask yourself, did it click? Is it seated all the way?
+     TR15 TR15-01 SFP was not pushed all the way in -  for every action, there is a follow-up action. Slow down. Be attentive. Ask yourself, did it click? Is it seated all the way?  
+     Port naming - Discussed in IPQC Bi-weekly meeting 11/19/20. The AoR tech tabs are being expanded to make sure follow-up action is completed during post-install activities.
+
+Tech Area tabs for this install. Please update this site IG and all future install IGs.
+ - Tech 1 Angelito(be sure to use your given name on CCSD documentation), Tab incomplete
+ - Tech 2 Sean, Tab incomplete
+ - Tech 3 Colin, Tab incomplete
+ - Tech 4 Joe, Completed. Good Job. Just need to utilize the verified column.
+ - Tech 5, Hammett, Tab incomplete.
+Please work as a team to complete while on site. It is okay for another teammate to complete or work a portion of the tab. Just annotate in the notes column. As it is, from the customer's viewpoint, the effort was not completed. This needs to be a major area of improvement.
+
+ Prep Team -
+   ISSUE/AoR/SOP
+From nightly status gmails:
+        Added MAC/Serial for WLC onto the IG - be sure the SOP reflects serial number capture and IG entry
+ 
+Validation Issues:
+       IG Installed switch is only showing 1 serial number for RTR-01 - Capturing as part of the prep is of great benefit. The customer requires all the serial numbers to be added to the deployment ticket at the completion of the project. Please make sure this is part of the prep SOPs. 
+
+
+ Survey Team -
+   ISSUE/AoR/SOP
+  From nightly status gmails: 
+      NO Issues noted by Teams         
+Validation Issues:
+      NO Issues noted by Teams</p>
+{% endblock %}

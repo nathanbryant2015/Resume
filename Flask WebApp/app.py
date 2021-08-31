@@ -22,11 +22,15 @@ def survey_main():
 def prep_main():
     return render_template('configgen.html')
 
+@app.route("/deployment")
+def deployment_main():
+    return render_template('deployment.html')
+
 @app.route("/validation")
 def validation_main():
     return render_template('validation.html')
 
-@app.route("/Firmware")
+@app.route("/integrationengineer")
 def integrationengineer_main():
     return render_template('integrationengineer.html')
 
