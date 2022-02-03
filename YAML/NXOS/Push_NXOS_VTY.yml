@@ -1,0 +1,48 @@
+#Script to update VTY access lists on NXOS
+
+#Program Task Steps:
+
+#1 Delete current VTY ACL and generate a new ACL
+#2 Populate new ACL with desired IP ranges
+#3 Enable VTY on devices
+#$ Write Memory
+
+
+#1
+---
+- name: Update VTY Access List against group (Loop)
+  hosts: {{group}}
+  gather_facts: false
+
+  tasks:
+    - name: Delete current VTY access List and create a new one
+      nxos_config:
+        lines:
+          - no ip access-list standard ACL-LIST
+          - ip access-list standard ACL-LIST
+
+#2
+    - name: Configure VTY Access List IP addresses
+      nxos_config:
+        lines:
+          - remark NetworkMgmt
+          - permit 10.0.0.0/24 any
+          - remakr Ansible Tower
+          - permit 10.100.0.1/32 any
+          - deny any log
+      parents: ip access-list  ACL-LIST
+
+#3
+    - name: Enable VTY
+      nxos_config:
+        lines:
+          - line vty 
+          - access-class ACL-LIST in
+        parents: ip access-list ACL-LIST
+
+#4
+    - name: Write mem
+      nxos_config:
+        lines:
+          - exit
+          - copy running-config startup-config

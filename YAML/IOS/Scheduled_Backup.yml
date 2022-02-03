@@ -1,0 +1,66 @@
+#Backup script to gather 'Show run' outputs from devices and saves them to an Remote NFS.
+#Directory Names: YYYY-MM-DD
+#Hostname: hostname.YYYY-MM-DD.txt
+
+#Program tasks steps:
+#1 Gather date_time from local device (Tower) (runs once)
+#2 Convert subset to variable (runs once)
+#3 Store date and time to a variable that can be used by other tasks. (runs once)
+#4 Create a directory with the name containing the date (runs once)
+#5 Run 'Show run' onto the devices and save the output to register. {{group}} is the list of devices.
+#6  Save output to directory
+
+
+#1 
+---
+- name: uses ansible_date_time fact to retrieve data and timestamp
+  hosts: localhost
+  tasks:
+    - name: Get ansible date/time facts
+      setup:
+        filter: "ansible_date_time"
+        gather_subset: "!all"
+
+#2
+    - name: Ansible fact  ansible_date_time
+      debug:
+        var: ansible_date_time
+
+#3
+    - name: Store value to variable
+      set_fact:
+        DTG: "{{ansible_date_time.date}}"
+
+#4
+    - name: Create Directory
+      file:
+        path: "/mnt/Path/to/NFS/backups/{{hostvars.localhost.DTG}}"
+        state: directory
+  run_once: true
+
+#5
+name: Backup device configs using 'Show Run'
+hosts: "{{group}}"
+gather_facts: false
+vars:
+  ansible_connection: network_cli
+  ansible_network_os: ios
+
+tasks:
+  - name: show run
+    ios_command:
+      commands: show run
+    register: config
+    retries: 3
+    delay: 10
+  
+#6
+  - name: Save to NFS
+    copy:
+      content: "{{config.stdout[0]}}"
+      dest: "/mnt/Path/to/NFS/backups/{{hostvars.localhost.DTG}}/{{inventory_hostname}}-{{hostvars.localhost.DTG}}.txt:"
+    delegate_to: localhost
+
+  - name: delay
+    pause:
+      minutes: 1
