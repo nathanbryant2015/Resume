@@ -1,0 +1,69 @@
+#Kiosk Variables. Change Value to True for Kiosk Type. You are able to mix and match
+Dashboard_1_Screen: False
+Dashboard_2_Screen: False
+NxWitness_1_Screen: False
+NxWitness_2_Screen: False
+NxWitness_3_Screen: False
+NxWitness_4_Screen: False
+Video_Loop: True
+Image_1_Screen: False
+Image_2_Screen: False
+Screen_Saver_1_Screen: False
+Screen_Saver_2_Screen: False
+
+#Kiosk Screen Power and Active Screen. Select one or the Other
+TV_Power_Daily: False
+TV_Power_Hourly: True
+
+#Updates Spreadsheet with IP/Hostname. Recommended to leave it at 1
+Mac_Update: True
+
+
+#NXwitness Vars. Update as needed
+Nx_Shortcut: C:\ProgramData\Microsoft\Windows\Start Menu\Programs\Network Optix\NX Witness.lnk
+Nx_User: MIA
+Nx_Pass: 'MIA'
+Nx_Svr: 10.x.x.x
+Nx_Screen_0: 0
+Nx_Screen_1: 1
+Nx_Screen_2: 2
+Nx_Screen_3: 3
+
+#NX layout name must match exactly what is visible to the defined nx_user when logged into NXwitness
+nx_layout01_name: "BF-WALL-03"
+nx_layout02_name: "BF-WALL-04"
+nx_layout03_name: "BF-WALL-05"
+nx_layout03_name: "BF-WALL-06"
+
+#Dashboard Chrome Vars
+chrome_driver_path: C:\kiosk\chromedriver\chromedriver.exe
+dashboard_screen_1_start: --window-position=0,0
+dashboard_screen_2_start: --window-position=1920,0
+dashboard_window_1_size:  --window-size=1920,1080
+dashboard_window_2_size:  --window-size=1920,1080
+google_login: "https://accounts.google.com/ServiceLogin?service=wise&passive=1209600&continue=https://drive.google.com/%23&followup=https://drive.google.com/&emr=1"
+google_user: MIA@companyemail.com
+google_pw: "MIA"
+chrome_url01: "https://drive.google.com"
+chrome_url02: "https://yahoo.com"
+chrome_url03: "https://gmail.com"
+chrome_url04: "https://outlook.com"
+
+#Video Loop Variables, Must SELECT SCREEN IN APPLICATION!!!!!!
+video_player_path: C:\Program Files (x86)\VideoLAN\VLC\vlc.exe
+Video_location: C:\kiosk\videos\video1.mp4
+
+
+#Screen Saver Variables
+photo_directory_screen1: 'MIA-Google-Drive-Link'
+photo_directory_screen2: 'MIA-Google-Drive-Link'
+screen_saver_screen_1_start: --window-position=0,0
+screen_saver_screen_2_start: --window-position=1920,0
+screen_saver_window_1_size:  --window-size=1920,1080
+screen_saver_window_2_size:  --window-size=1920,1080
+
+#Image Path Variables
+image_path1: 'C:\kiosk\images\image1.pdf'
+image_path2: 'C:\kiosk\images\image2.pdf'
+image_screen_1_start: --window-position=0,0
+image_screen_2_start: --window-position=1920,0
